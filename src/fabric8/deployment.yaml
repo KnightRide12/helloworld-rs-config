@@ -1,0 +1,15 @@
+spec:
+  template:
+    spec:
+      containers:
+        - volumeMounts:
+          - name: application-config 
+            mountPath: "/deployments/config" 
+            readOnly: true
+      volumes:
+      - name: application-config
+        configMap:
+          name: helloworld-config 
+          items:
+          - key: application.properties 
+            path: application.properties

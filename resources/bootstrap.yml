@@ -1,0 +1,17 @@
+spring:
+  cloud:
+    kubernetes:
+      config:
+        enabled: true
+        sources:
+          - namespace: demo-app
+            name: helloworld-rs-config
+      reload:
+        enabled: true
+        mode: event
+        strategy: refresh
+
+management:
+  endpoint:
+    restart:
+      enabled: true

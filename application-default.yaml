@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: helloworld-config
+  namespace: demo-app
+data:
+  application.properties: |
+    management.endpoint.web.exposure.include = info,refresh,keepalive,health
+    logging.config=classpath:logback.xml
+    spring.application.name = helloworld-rs-config
+    server.address=0.0.0.0
+    management.address=0.0.0.0
+    management.port=8081
+    management.health.probes.enabled=true
+    endpoints.health.enabled = true
+    user.env=Dev
