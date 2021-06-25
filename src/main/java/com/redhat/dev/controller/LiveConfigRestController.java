@@ -11,13 +11,13 @@ import org.springframework.web.bind.annotation.RestController;
 import com.redhat.dev.config.Config;
 
 @RestController
-public class LiveConfigTestController {
+public class LiveConfigRestController {
 
-    private static Logger log = LoggerFactory.getLogger(LiveConfigTestController.class);
+    private static Logger log = LoggerFactory.getLogger(LiveConfigRestController.class);
 
     private Config config;
 
-    public LiveConfigTestController(Config config) {
+    public LiveConfigRestController(Config config) {
         this.config = config;
     }
 
