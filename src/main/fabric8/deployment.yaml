@@ -3,9 +3,9 @@ spec:
     spec:
       containers:
         - volumeMounts:
-          - name: application-config 
-            mountPath: "/deployments/config" 
-            readOnly: true
+            - name: application-config 
+              mountPath: "/deployments/config" 
+              readOnly: true
       volumes:
       - name: application-config
         configMap:
