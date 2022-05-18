@@ -25,7 +25,23 @@ public class LiveConfigRestController {
     @GetMapping(value = "/greet/{user}")
     public String getPropertyValue(@PathVariable("user") String user) {
         log.info("user.env:" + config.getEnv());
-        return "Hello " + user + "! You currently running on " + config.getEnv() + " environment.";
+        StringBuilder str = new StringBuilder();
+        str.append("Hello " + user + "! You currently running on " + config.getEnv() + " environment.");
+        str.append("\n");
+        switch (config.getEnv().toLowerCase()) {
+            case "dev":
+            	str.append("Have fun and go break things!");
+            	break;
+            case "prod":
+            	str.append("Be careful, you are not allowed to break things!");
+            	break;
+        	default:
+        		str.append("I don't know if you should be breaking things.");
+        		break;
+        		
+        }
+        
+        return str.toString();
     }
 
 }
